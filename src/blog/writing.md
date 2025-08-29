@@ -1,0 +1,35 @@
+---
+title: "Writing"
+date: 2025-08-27
+tags: ["writing", "self-discipline", "bilingual", "creativity"]
+description: "Второе наблюдение, которое пришло ко мне во время мытья посуды (во истину – первый шаг к медитации), так это то, что писателем становишься не в момент, когда продаёшь свою первую книгу"
+---
+
+# Writing  
+
+## Русский
+
+Второе наблюдение, которое пришло ко мне во время мытья посуды (во истину – первый шаг к медитации), так это то, что писателем становишься не в момент, когда продаёшь свою первую книгу, и не когда подписываешь первый контракт на выпуск фильма, а просто когда садишься и пишешь слова на лист.  
+
+
+Потому что именно это и есть – писательство. Остальное – дело оттачивания мастерства. Понятное дело, что может и не стоит ходить и рассказывать направо и налево, что ты писатель, пока тебя не опубликуют, потому что люди будут над тобой посмеиваться, но перед самим собой ты можешь всегда быть честен – ты ещё и писатель, пусть и хреновый. Просто пока учишься. А чтобы учиться – нужно писать, набивать ошибки, переписывать и так далее по кругу.  
+
+Я всё время боюсь, что не справлюсь с писательством. Однако я только что закончил год в Комплексных Системах, и год назад прошёл первый курс программы нейробиологического факультета. В 2012 году это всё мне бы показалось сумасшедшим планом: никаких знаний по биологии, программированию, никаких понятий о том, как работает наука.  
+Однако, потихоньку, со скрипом я преодолел барьеры. Да, я был слабее многих остальных, которые были рядом – многие умнее меня в программировании, в нейробиологии, но моя цель и не была стать умнее всех на свете, а только умнее самого себя в 2012 году.  
+
+Точно так же, если я хочу наконец начать стабильно писать, и постоянно боюсь, что у меня будут выходить плохие и никому неинтересные детские и нелепые рассказы, которые я буду ещё и бросать на полдороге, то надо посмотреть на предыдущий опыт и понять, что я могу преодолевать себя.  
+Да, я не стану Стивеном Кингом, и т. п., но я точно смогу достигнуть такой цели: писать и дописывать. А если я буду дописывать и редактировать, то со временем качество будет лучше. Потому что обычно качество либо не меняется, либо растёт. Так что попробовать точно стоит.  
+
+---
+
+## English  
+
+The second observation that came to me while washing dishes (truly the first step toward meditation) is that you don’t become a writer at the moment you sell your first book, nor when you sign your first film contract, but simply when you sit down and write words on a page.  
+
+Because that is what writing is. Everything else is honing the craft. Sure, maybe it’s not worth going around telling everyone you’re a writer until you’re published—people will laugh at you—but to yourself you can always be honest: you’re a writer, even if a lousy one. You’re just learning. And to learn, you must write, make mistakes, rewrite, and repeat the cycle.  
+
+I’m always afraid I won’t succeed at writing. But I just finished a year in Complex Systems, and a year ago completed the first course of a neurobiology program. In 2012, all this would have seemed like a crazy plan to me: no knowledge of biology, no programming, no idea how science works.  
+But slowly, with effort, I overcame the barriers. Yes, I was weaker than many around me—many were smarter than me in programming, in neurobiology—but my goal was never to be smarter than everyone else in the world, only smarter than myself in 2012.  
+
+In the same way, if I want to finally start writing consistently, and I’m always afraid that I’ll produce bad, childish, ridiculous stories that no one will like and that I’ll abandon halfway, I need to look at my past experience and recognize that I can overcome myself.  
+No, I won’t become Stephen King, etc., but I can definitely achieve this goal: to write and to finish. And if I keep finishing and editing, over time the quality will improve. Because quality usually either stays the same or grows. So it’s definitely worth trying.

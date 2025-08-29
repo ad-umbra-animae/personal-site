@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{{ title }}</title>
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+  <header>
+    <h1><a href="/">Ad Umbra Animae</a></h1>
+    <nav>
+      <a href="/about">About</a>
+      <a href="/blog">Blog</a>
+      <a href="/scifi">Science Fiction</a>
+      <a href="/philosophy">Philosophy</a>
+      <a href="/psychology">Psychology</a>
+    </nav>
+  </header>
+
+  <main>
+    {{ content | safe }}
+  </main>
+
+  {% include "footer.njk" %}
+</body>
+</html>

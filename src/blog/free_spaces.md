@@ -1,0 +1,31 @@
+---
+title: "Свободные пространства и пластичность / Free Spaces and Plasticity"
+date: 2025-08-27
+tags: ["neuroscience", "time-management", "plasticity", "bilingual"]
+description: ["Вчера вечером, читая книгу Мигеля Николелиса *«За границами»* (*Beyond Boundaries*), я наткнулся на описание простого эксперимента, в котором автор книги исследовал перераспределение функций соматосенсорной коры после применения местной анестезии."]
+---
+
+# Свободные пространства и пластичность  
+*(Free Spaces and Plasticity)*  
+
+## Русский  
+
+Вчера вечером, читая книгу Мигеля Николелиса *«За границами»* (*Beyond Boundaries*), я наткнулся на описание простого эксперимента, в котором автор книги исследовал перераспределение функций соматосенсорной коры после применения местной анестезии.  
+
+Результаты были просто ошеломляющие: незамедлительно после применения агента, который полностью отключил информационный поток от определённого участка тела, соответствующий ему участок коры стал реорганизовываться для обработки смежных участков. Эта фантастическая функциональная пластичность противоречит старым теориям об устройстве коры головного мозга, в которых определённые участки строго привязывались к обработке тех или иных функций строго определённых участков тела.  
+
+Иначе говоря, свято место пусто не бывает. Нервные клетки – это такой огромный вычислительный агрегат, за который постоянно борются другие структуры, которым нужна вычислительная мощность. Как только один из входных нервов сдаёт – пропадает сигнал от анестезии, или при травме обрываются сенсоры – сразу за соматосенсорную кору начинают бороться смежные участки.  
+
+Я подумал также, что в некотором роде этот принцип заполнения всего доступного пространства применим и в тайм-менеджменте: если ты хочешь перестать заниматься пустым, бездарным и бесцельным, то надо просто не дать себе на это времени. Взять и выдавить из репертуара своего поведения просиживание часами в соцсетях, бесцельное и бесконтрольное отвлечение на статьи про политику и играние в компьютерные игры по нескольку часов.  
+
+---
+
+## English  
+
+Yesterday evening, while reading Miguel Nicolelis’ book *Beyond Boundaries*, I came across the description of a simple experiment in which the author studied the redistribution of somatosensory cortex functions after applying local anesthesia.  
+
+The results were simply astonishing: immediately after the agent was applied, completely shutting down the information flow from a certain body part, the corresponding cortical area began to reorganize to process input from neighboring regions. This fantastic functional plasticity contradicts old theories of the brain cortex, where certain areas were strictly tied to processing functions of specific body parts.  
+
+In other words, there is no such thing as an empty place. Neurons are a huge computational aggregate, constantly contested by other structures in need of processing power. As soon as one input nerve fails—whether from anesthesia blocking signals or trauma severing sensors—neighboring cortical regions immediately begin competing for that territory.  
+
+I also thought that, in some sense, this principle of filling all available space applies to time management as well: if you want to stop spending time on empty, pointless, and meaningless things, you simply must not allow yourself time for them. Cut out of your behavioral repertoire the hours wasted in social media, the aimless and uncontrolled distraction of political articles, and multi-hour computer game sessions.  

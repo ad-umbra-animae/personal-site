@@ -1,0 +1,16 @@
+---
+title: Blog
+layout: layout.njk
+---
+
+<h2>Blog</h2>
+
+<ul>
+  {% for post in collections.blog %}
+    <li>
+      <h3><a href="{{ post.url }}">{{ post.data.title }}</a></h3>
+      {% set preview = post.data.description or post.data.page.excerpt or (post.templateContent | striptags) %}
+      <p>{{ preview | truncate(200, true, "…") }}</p>
+    </li>
+  {% endfor %}
+</ul>

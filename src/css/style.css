@@ -25,3 +25,10 @@ form input, form textarea {
   margin-top: 0.5rem;
   margin-bottom: 1rem;
 }
+
+.site-blurb {
+  font-size: 0.9em;
+  font-style: italic;
+  margin-top: -0.5rem;
+  color: #666;
+}

@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en" class="bg-white text-gray-900">
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width,initial-scale=1"/>
+        <title>About — Eidolon Aeon</title>
+        <link rel="stylesheet" href="../styles/output.css">
+    </head>
+    <body class="min-h-screen flex flex-col">
+        <header class="border-b">
+            <div class="mx-auto max-w-6xl px-4 py-4 flex items-center justify-between"><a href="./index.html" class="text-xl font-semibold tracking-tight">Eidolon Aeon</a>
+                <nav class="flex gap-6 text-sm"><a class="hover:underline" href="./blog/index.html">Blog</a><a class="hover:underline" href="./fiction/index.html">Fiction</a><a class="hover:underline" href="./nonfiction/index.html">Non-Fiction</a><a class="font-semibold" href="./about.html">About</a><a class="hover:underline" href="./contact.html">Contact</a>
+                </nav>
+            </div>
+        </header>
+        <main class="flex-1">
+            <section class="mx-auto max-w-3xl px-4 py-12">
+                <article class="prose">
+                    <h1>About</h1>
+                    <p>Short bio goes here. Replace with your actual content.</p>
+                </article>
+            </section>
+        </main>
+        <footer class="border-t">
+            <div class="mx-auto max-w-6xl px-4 py-6 text-sm">© <span id="year"></span> Eidolon Aeon
+            </div>
+            <script>document.getElementById('year').textContent = new Date().getFullYear()</script>
+        </footer>
+    </body>
+</html>

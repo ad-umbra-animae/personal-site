@@ -1,0 +1,28 @@
+---
+layout: layouts/page.njk
+permalink: /blog/
+title: Blog — Eidolon Aeon
+eleventyExcludeFromCollections: true
+---
+
+<h1>Blog</h1>
+
+<ul class="not-prose space-y-6">
+  {% for post in collections.blog %}
+    <li class="border-b pb-6">
+      <h2 class="text-xl font-semibold">
+        <a class="hover:underline" href="{{ post.url }}">{{ post.data.title }}</a>
+      </h2>
+      <p class="text-sm text-gray-500">
+        {{ post.date | date("LLL d, yyyy") }}
+        {% if post.data.tags and post.data.tags.length %} • tags: {{ post.data.tags | join(", ") }}{% endif %}
+        • {{ post.templateContent | readingTime }}
+        • ~{{ post.templateContent | wordCount }} words
+      </p>
+
+      {% if post.data.excerpt %}
+        <p class="mt-2 text-gray-700">{{ post.data.excerpt }}</p>
+      {% endif %}
+    </li>
+  {% endfor %}
+</ul>

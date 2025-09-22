@@ -1,80 +1,80 @@
-// .eleventy.js
 const { DateTime } = require("luxon");
 
-// helper: unique by inputPath
-function uniqByInputPath(items) {
-  const seen = new Set();
-  return items.filter((it) => {
-    if (seen.has(it.inputPath)) return false;
-    seen.add(it.inputPath);
-    return true;
-  });
-}
-
-// helper: collect from multiple globs and sort newest->oldest
-function collectionFromGlobs(collectionApi, globs) {
-  const items = globs.flatMap((g) => collectionApi.getFilteredByGlob(g));
-  return uniqByInputPath(items).sort((a, b) => b.date - a.date);
-}
-
 module.exports = function(eleventyConfig) {
-  // date filter (you already had this)
-  eleventyConfig.addFilter("date", (value = new Date(), format = "yyyy") => {
-    return DateTime.fromJSDate(new Date(value)).toFormat(format);
+  // Pass through assets and your compiled Tailwind file to dist/
+  eleventyConfig.addPassthroughCopy({ "src/assets": "assets" });
+  eleventyConfig.addPassthroughCopy({ "src/styles/output.css": "styles.css" });
+
+  // Collections by category (newest first)
+  const makeCollection = (glob) => (col) =>
+    col.getFilteredByGlob(glob).sort((a, b) => b.date - a.date);
+
+  eleventyConfig.addCollection("blog", makeCollection("src/pages/blog/**/*.{md,html}"));
+  eleventyConfig.addCollection("fiction", makeCollection("src/pages/fiction/**/*.{md,html}"));
+  eleventyConfig.addCollection("nonfiction", makeCollection("src/pages/nonfiction/**/*.{md,html}"));
+
+  // Shortcode to print prev/next for a given collection (Nunjucks-aware)
+  eleventyConfig.addNunjucksShortcode("PrevNext", function(collectionName, page) {
+    const items = this.ctx.collections[collectionName] || [];
+    const i = items.findIndex(p => p.url === page.url);
+    const prev = items[i + 1]; // because sorted newest->oldest
+    const next = items[i - 1];
+    const homeHref = collectionName === "blog" ? "/blog/" :
+                     collectionName === "fiction" ? "/fiction/" : "/nonfiction/";
+    return `
+      <nav class="text-sm flex items-center justify-between">
+        <div class="flex items-center gap-4">
+          <a class="hover:underline" href="${homeHref}">Home</a>
+          <span class="opacity-50">|</span>
+          ${prev ? `<a class="hover:underline" href="${prev.url}">← Previous</a>` : `<span class="opacity-40">← Previous</span>`}
+          ${next ? `<a class="hover:underline" href="${next.url}">Next →</a>` : `<span class="opacity-40">Next →</span>`}
+        </div>
+        <a class="hover:underline" href="#top">↑ Top</a>
+      </nav>`;
   });
 
-  // enable front matter excerpts
-  eleventyConfig.setFrontMatterParsingOptions({
-    excerpt: true,
-    excerpt_separator: "<!-- more -->"
+  // Date formatting filter for Nunjucks (uses Luxon)
+  eleventyConfig.addFilter("date", (dateInput, fmt = "LLL d, yyyy", zone = "local") => {
+    let d;
+    if (dateInput instanceof Date) {
+      d = DateTime.fromJSDate(dateInput);
+    } else {
+      d = DateTime.fromISO(String(dateInput));
+      if (!d.isValid) d = DateTime.fromJSDate(new Date(dateInput));
+    }
+    return d.setZone(zone).toFormat(fmt);
   });
 
-  // static assets passthrough
-  eleventyConfig.addPassthroughCopy("src/css");
-  // images passthrough
-  eleventyConfig.addPassthroughCopy("src/images");
-
-  // BLOG: src/blog/**/*.md
-  eleventyConfig.addCollection("blog", (collectionApi) => {
-    return collectionFromGlobs(collectionApi, ["src/blog/**/*.md"]);
+  // Word count (plain text)
+  eleventyConfig.addFilter("wordCount", (str = "") => {
+    const text = String(str)
+      .replace(/<[^>]*>/g, " ")        // strip HTML tags
+      .replace(/&[a-z#0-9]+;/gi, " ")  // strip HTML entities
+      .replace(/\s+/g, " ")            // collapse whitespace
+      .trim();
+    if (!text) return 0;
+    return text.split(" ").length;
   });
 
-  // SCIENCE FICTION:
-  // supports either src/science-fiction or src/sci-fi (use whichever you prefer)
-  eleventyConfig.addCollection("scienceFiction", (collectionApi) => {
-    return collectionFromGlobs(collectionApi, [
-      "src/science-fiction/**/*.md",
-      "src/scifi/**/*.md",
-    ]);
-  });
-
-  // PHILOSOPHY: src/philosophy/**/*.md
-  eleventyConfig.addCollection("philosophy", (collectionApi) => {
-    return collectionFromGlobs(collectionApi, ["src/philosophy/**/*.md"]);
-  });
-
-  // PSYCHOLOGY: src/psychology/**/*.md
-  eleventyConfig.addCollection("psychology", (collectionApi) => {
-    return collectionFromGlobs(collectionApi, ["src/psychology/**/*.md"]);
-  });
-
-  // Optional: a unified "posts" collection (all four buckets)
-  eleventyConfig.addCollection("posts", (collectionApi) => {
-    return collectionFromGlobs(collectionApi, [
-      "src/blog/**/*.md",
-      "src/science-fiction/**/*.md",
-      "src/scifi/**/*.md",
-      "src/philosophy/**/*.md",
-      "src/psychology/**/*.md",
-    ]);
+  // Reading time (defaults to 220 wpm)
+  eleventyConfig.addFilter("readingTime", (str = "", wpm = 220) => {
+    const words = eleventyConfig.getFilter("wordCount")(str);
+    if (words === 0) return "0 min";
+    const minutes = words / wpm;
+    if (minutes < 1) {
+      const secs = Math.max(30, Math.round(minutes * 60 / 15) * 15); // 15s granularity
+      return `${secs}s`;
+    }
+    return `${Math.max(1, Math.round(minutes))} min`;
   });
 
   return {
     dir: {
-      input: "src",
-      includes: "_includes",
-      output: "_site",
+      input: "src",           // 11ty reads from src/
+      includes: "_includes",  // layouts live here
+      output: "dist"          // same deploy folder
     },
     markdownTemplateEngine: "njk",
+    htmlTemplateEngine: "njk"
   };
 };

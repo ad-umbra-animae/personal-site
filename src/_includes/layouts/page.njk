@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en" class="bg-white text-gray-900">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>{{ title | default("Eidolon Aeon") }}</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body class="min-h-screen flex flex-col">
+  <header class="border-b">
+    <div class="mx-auto max-w-5xl px-4 py-4 flex items-center justify-between">
+      <a href="/" class="text-xl font-semibold tracking-tight">Eidolon Aeon</a>
+      {% include "partials/nav.njk" %}
+    </div>
+  </header>
+
+  <main class="flex-1 mx-auto max-w-3xl px-4 py-10 prose">
+    {{ content | safe }}
+  </main>
+
+  <footer class="border-t">
+    <div class="mx-auto max-w-5xl px-4 py-6 text-sm">
+      © <span id="year"></span> Eidolon Aeon
+    </div>
+    <script>document.getElementById('year').textContent = new Date().getFullYear()</script>
+  </footer>
+</body>
+</html>

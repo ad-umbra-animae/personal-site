@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en" class="bg-white text-gray-900">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Contact — Eidolon Aeon</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body class="min-h-screen flex flex-col">
+  <header class="border-b">
+    <div class="mx-auto max-w-5xl px-4 py-4 flex items-center justify-between">
+      <a href="/" class="text-xl font-semibold tracking-tight">Eidolon Aeon</a>
+      <nav class="text-sm flex gap-4">
+  <a href="/">Home</a>
+  <a href="/blog/">Blog</a>
+  <a href="/fiction/">Fiction</a>
+  <a href="/nonfiction/">Non-Fiction</a>
+  <a href="/about/">About</a>
+  <a href="/contact/">Contact</a>
+</nav>
+    </div>
+  </header>
+
+  <main class="flex-1 mx-auto max-w-3xl px-4 py-10 prose">
+    
+<section class="mx-auto max-w-xl px-4 py-12">
+  <h1 class="text-3xl font-bold mb-6">Contact</h1>
+
+  <form action="https://formspree.io/f/XXXXXXX" method="POST" class="space-y-4">
+    <input
+      name="name"
+      type="text"
+      placeholder="Name"
+      class="w-full rounded-md border px-3 py-2"
+      required
+    >
+    <input
+      name="email"
+      type="email"
+      placeholder="Email"
+      class="w-full rounded-md border px-3 py-2"
+      required
+    >
+    <textarea
+      name="message"
+      rows="6"
+      placeholder="Message"
+      class="w-full rounded-md border px-3 py-2"
+      required
+    ></textarea>
+    <button class="px-4 py-2 rounded-lg border hover:bg-gray-50">Send</button>
+  </form>
+</section>
+  </main>
+
+  <footer class="border-t">
+    <div class="mx-auto max-w-5xl px-4 py-6 text-sm">
+      © <span id="year"></span> Eidolon Aeon
+    </div>
+    <script>document.getElementById('year').textContent = new Date().getFullYear()</script>
+  </footer>
+</body>
+</html>

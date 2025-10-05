@@ -37,10 +37,10 @@
       <section class="not-prose mt-10">
         <h3 class="text-base font-semibold mb-3">Tags</h3>
         <ul class="flex flex-wrap gap-2">
-          {% for t in tags %}
+          {% for t in tags | filterTagList %}
           <li>
-            <a rel="tag" href="/{{ collectionName }}/tags/#{{ t | slug }}"
-               class="inline-flex items-center rounded-full border px-3 py-1 text-xs hover:bg-gray-50">
+            <a rel="tag" href="/tags/{{ t | slug }}/"
+              class="inline-flex items-center rounded-full border px-3 py-1 text-xs hover:bg-gray-50">
               {{ t }}
             </a>
           </li>

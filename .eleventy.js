@@ -68,10 +68,25 @@ module.exports = function(eleventyConfig) {
     return `${Math.max(1, Math.round(minutes))} min`;
   });
 
+  function getAllTags(collection) {
+    const tagSet = new Set();
+    collection.getAll().forEach(item => {
+      (item.data.tags || []).forEach(t => tagSet.add(t));
+    });
+    return [...tagSet];
+  }
+
+  function filterTagList(tags) {
+    return (tags || []).filter(t => !["all","nav","post"].includes(t));
+  }
+
+  eleventyConfig.addFilter("filterTagList", filterTagList);
+  eleventyConfig.addCollection("tagList", api => filterTagList(getAllTags(api)));
+
   return {
     dir: {
-      input: "src",           // 11ty reads from src/
-      includes: "_includes",  // layouts live here
+      input: "src/pages",           // 11ty reads from src/
+      includes: "../_includes",  // layouts live here
       output: "dist"          // same deploy folder
     },
     markdownTemplateEngine: "njk",

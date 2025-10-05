@@ -1,0 +1,15 @@
+---
+permalink: /tags/
+layout: layouts/page.njk
+title: All Tags
+---
+<h1>All Tags</h1>
+<ul class="flex flex-wrap gap-2">
+  {% for tag in collections.tagList %}
+    <li>
+      <a href="/tags/{{ tag | slug }}/" class="inline-flex items-center rounded-full border px-3 py-1 text-xs hover:bg-gray-50">
+        {{ tag }} <span class="ml-1 opacity-70">({{ collections[tag] | length }})</span>
+      </a>
+    </li>
+  {% endfor %}
+</ul>

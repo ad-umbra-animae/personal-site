@@ -1,0 +1,7 @@
+{% if tags %}
+<ul class="tags">
+  {% for t in tags | filterTagList %}
+    <li><a href="/tags/{{ t | slug }}/">{{ t }}</a></li>
+  {% endfor %}
+</ul>
+{% endif %}

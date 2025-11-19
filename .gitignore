@@ -1,0 +1,23 @@
+# Build output
+dist/
+_site/
+.cache/
+.tmp/
+
+# Dependencies
+node_modules/
+
+# Pinegrow backups
+_pgbackup/
+**/_pgbackup/
+*.pgbackup
+
+# OS / editor junk
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Env files
+.env
+.env.*
